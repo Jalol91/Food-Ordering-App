@@ -1,4 +1,16 @@
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { productData } from 'data/product'
 const ShopDetailspage = () => {
+	const [product, setProduct] = useState({})
+	const params = useParams()
+
+	useEffect(() => {
+		const productItem = productData.find((item) => item.slug === params.slug)
+
+		setProduct(productItem)
+	}, [])
+
 	return (
 		<div>
 			<div>
@@ -62,11 +74,11 @@ const ShopDetailspage = () => {
 											</li>
 										</ul>
 									</nav>
-									<h2 className='entry-title'>Maxican Pizza Test Better</h2>
+									<h2 className='entry-title'>{product.title}</h2>
 									<div className='row'>
 										<div className='col-lg-6 order-lg-last align-self-center'>
 											<div className='rating text-lg-end'>
-												4.9
+												{product.rating}
 												<span className='rating-inner'>
 													<i className='ri-star-fill ps-0' />
 													<i className='ri-star-fill' />
@@ -74,21 +86,14 @@ const ShopDetailspage = () => {
 													<i className='ri-star-fill' />
 													<i className='ri-star-half-line pe-0' />
 												</span>
-												(200)
+												{product.totalRating}
 											</div>
 										</div>
 										<div className='col-lg-6 align-self-center'>
-											<h4 className='price'>$27.00</h4>
+											<h4 className='price'>${product.price}</h4>
 										</div>
 									</div>
-									<p className='mt-4'>
-										Pizza is a savory dish of Italian origin consisting of a
-										usually round, flattened base of leavened wheat-based dough
-										topped with tomatoes, cheese, and often various other
-										ingredients, which is then baked at a high temperature,
-										traditionally in a wood-fired oven. A small pizza is
-										sometimes called a pizzetta.
-									</p>
+									<p className='mt-4'>{product.text}</p>
 									<div className='row'>
 										<div className='col-lg-6 align-self-center'>
 											<div className='variation'>

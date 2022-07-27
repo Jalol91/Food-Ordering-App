@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Navbar = () => {
 	return (
 		<header className='navbar-area navbar-area-2'>
@@ -20,57 +22,21 @@ const Navbar = () => {
 					</div>
 					<div className='collapse navbar-collapse' id='themefie_main_menu'>
 						<ul className='navbar-nav menu-open'>
-							<li className='current-menu-item menu-item-has-children'>
-								<a href='home-1.html'>HOME</a>
-								<ul className='sub-menu ps-0'>
-									<li>
-										<a href='home-1.html'>Home 01</a>
-									</li>
-									<li>
-										<a href='home-2.html'>Home 02</a>
-									</li>
-									<li>
-										<a href='home-3.html'>Home 03</a>
-									</li>
-								</ul>
-							</li>
-							<li className='current-menu-item menu-item-has-children'>
-								<a href='#'>PAGES</a>
-								<ul className='sub-menu ps-0'>
-									<li>
-										<a href='about.html'>About</a>
-									</li>
-									<li>
-										<a href='blog.html'>Blog</a>
-									</li>
-									<li>
-										<a href='blog-details.html'>Blog Details</a>
-									</li>
-									<li>
-										<a href='menu.html'>Menu</a>
-									</li>
-									<li>
-										<a href='menu-list.html'>Menu List</a>
-									</li>
-									<li>
-										<a href='shop.html'>Shop</a>
-									</li>
-									<li>
-										<a href='single-product.html'>Shop Details</a>
-									</li>
-									<li>
-										<a href='cart.html'>Cart</a>
-									</li>
-									<li>
-										<a href='checkout.html'>Checkout</a>
-									</li>
-								</ul>
+							<li>
+								<Link to='/'>Home</Link>
 							</li>
 							<li>
-								<a href='about.html'>ABOUT US</a>
+								<Link to='/about'>About Us</Link>
+							</li>
+
+							<li>
+								<Link to='/shop'>Shop</Link>
 							</li>
 							<li>
-								<a href='contact.html'>CONTACTS</a>
+								<Link to='/menu'>Menus</Link>
+							</li>
+							<li>
+								<Link to='/contacts'>Contacts</Link>
 							</li>
 						</ul>
 					</div>

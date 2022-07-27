@@ -1,38 +1,16 @@
+import BreadCrumb from 'component/BreadCrumb'
+import ContactFormContainer from 'component/ContactForm'
+
 const ContactsPage = () => {
 	return (
 		<div>
 			<div>
-				<section className='breadcrumb-area'>
-					<div className='banner-bg-img' />
-					<div className='banner-shape-1'>
-						<img src='assets/img/banner/shape-1.png' alt='img' />
-					</div>
-					<div className='banner-shape-2'>
-						<img src='assets/img/banner/shape-2.png' alt='img' />
-					</div>
-					<div className='container'>
-						<div className='row justify-content-center'>
-							<div className='col-lg-6 align-self-center'>
-								<div className='banner-inner text-center'>
-									<h3>Contact with Us</h3>
-									<h1>Contact</h1>
-									<nav aria-label='breadcrumb'>
-										<ul className='breadcrumb'>
-											<li className='breadcrumb-item'>
-												<a href='home.html'>Home</a>
-											</li>
-											<li
-												className='breadcrumb-item active'
-												aria-current='page'>
-												Contact
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				<BreadCrumb
+					titleTop={'Contact with Us'}
+					title={'Contact'}
+					url={'contact'}
+				/>
+
 				{/* bredcrumb Area End */}
 				{/* contact start */}
 				<div className='contact-area pd-top-120 pd-bottom-100'>
@@ -61,42 +39,7 @@ const ContactsPage = () => {
 									small, providing our expert clients with solutions.
 								</p>
 							</div>
-							<div className='col-lg-6'>
-								<form className='default-form-wrap border-0 p-0 mt-4 mt-lg-0'>
-									<div className='row'>
-										<div className='col-md-6'>
-											<div className='single-input-wrap'>
-												<input
-													type='text'
-													className='form-control'
-													placeholder='Your Name'
-												/>
-											</div>
-										</div>
-										<div className='col-md-6'>
-											<div className='single-input-wrap'>
-												<input
-													type='text'
-													className='form-control'
-													placeholder='Your Email'
-												/>
-											</div>
-										</div>
-										<div className='col-12'>
-											<div className='single-textarea-wrap'>
-												<textarea
-													rows={4}
-													placeholder='Message...'
-													defaultValue={''}
-												/>
-											</div>
-										</div>
-									</div>
-									<button type='submit' className='btn btn-base'>
-										Submit your Message
-									</button>
-								</form>
-							</div>
+							<ContactFormContainer />
 						</div>
 					</div>
 				</div>

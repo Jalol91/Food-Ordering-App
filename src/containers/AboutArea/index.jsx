@@ -1,4 +1,23 @@
 const AboutArea = () => {
+	const aboutArr = [
+		{
+			title: 'Fresh food',
+			img: 'assets/img/icon/1.png',
+		},
+		{
+			title: 'Fast Delivery',
+			img: 'assets/img/icon/2.png',
+		},
+		{
+			title: 'Quality Maintain',
+			img: 'assets/img/icon/3.png',
+		},
+		{
+			title: '24/7 Service',
+			img: 'assets/img/icon/4.png',
+		},
+	]
+
 	return (
 		<section className='about-area pd-top-120 pd-bottom-90'>
 			<div className='container'>
@@ -21,30 +40,14 @@ const AboutArea = () => {
 							</p>
 						</div>
 						<div className='row'>
-							<div className='col-sm-6'>
-								<div className='single-about-wrap style-2'>
-									<img src='assets/img/icon/1.png' alt='img' />
-									Fresh food
+							{aboutArr.map((item, index) => (
+								<div className='col-sm-6'>
+									<div key={index} className='single-about-wrap style-2'>
+										<img src={item.img} />
+										{item.title}
+									</div>
 								</div>
-							</div>
-							<div className='col-sm-6'>
-								<div className='single-about-wrap style-2'>
-									<img src='assets/img/icon/2.png' alt='img' />
-									Fast Delivery
-								</div>
-							</div>
-							<div className='col-sm-6'>
-								<div className='single-about-wrap style-2'>
-									<img src='assets/img/icon/3.png' alt='img' />
-									Quality Maintain
-								</div>
-							</div>
-							<div className='col-sm-6'>
-								<div className='single-about-wrap style-2'>
-									<img src='assets/img/icon/4.png' alt='img' />
-									24/7 Service
-								</div>
-							</div>
+							))}
 						</div>
 					</div>
 				</div>

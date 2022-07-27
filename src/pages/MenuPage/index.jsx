@@ -1,38 +1,16 @@
+import { productData } from 'data/product'
+import BreadCrumb from 'component/BreadCrumb'
+
 const MenuPage = () => {
 	return (
 		<div>
 			<div>
-				<section className='breadcrumb-area'>
-					<div className='banner-bg-img' />
-					<div className='banner-shape-1'>
-						<img src='assets/img/banner/shape-1.png' alt='img' />
-					</div>
-					<div className='banner-shape-2'>
-						<img src='assets/img/banner/shape-2.png' alt='img' />
-					</div>
-					<div className='container'>
-						<div className='row justify-content-center'>
-							<div className='col-lg-6 align-self-center'>
-								<div className='banner-inner text-center'>
-									<h3>Choose you items</h3>
-									<h1>Discover Our menu</h1>
-									<nav aria-label='breadcrumb'>
-										<ul className='breadcrumb'>
-											<li className='breadcrumb-item'>
-												<a href='home.html'>Home</a>
-											</li>
-											<li
-												className='breadcrumb-item active'
-												aria-current='page'>
-												Menu List
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+				<BreadCrumb
+					titleTop={'Choose you items'}
+					title={'Discover Our menu'}
+					url={'menu'}
+				/>
+
 				{/* bredcrumb Area End */}
 				{/* populer Area Start*/}
 				<section className='populer-area pd-top-50 pd-bottom-120'>
@@ -50,215 +28,31 @@ const MenuPage = () => {
 							</div>
 						</div>
 						<div className='row justify-content-center'>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
+							{productData.map((item, index) => (
+								<div key={index} className='col-lg-6'>
+									<div className='single-item-wrap style-2'>
+										<div className='media'>
+											<div className='thumb'>
+												<img src={item.img} alt='img' />
+											</div>
+											<div className='wrap-details'>
+												<h5>
+													<a href='single-product.html'>{item.title}</a>
+												</h5>
+												<p>{item.text}</p>
+												<div className='wrap-footer'>
+													<h6 className='price'>{item.price}</h6>
+													<button type='submit' className='btn btn-secondary'>
+														ADD TO CART
+													</button>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className='col-lg-6'>
-								<div className='single-item-wrap style-2'>
-									<div className='media'>
-										<div className='thumb'>
-											<img src='assets/img/product/burger/1.png' alt='img' />
-										</div>
-										<div className='wrap-details'>
-											<h5>
-												<a href='single-product.html'>
-													All Season Gulliver Pizza
-												</a>
-											</h5>
-											<p>
-												Pizza is a savory dish of Italian origin consisting of a
-												usually round, flattened base of leavened.
-											</p>
-											<div className='wrap-footer'>
-												<h6 className='price'>$17.00</h6>
-												<button type='submit' className='btn btn-secondary'>
-													ADD TO CART
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className='col-12'>
+							))}
+
+							{/* <div className='col-12'>
 								<nav>
 									<ul className='pagination'>
 										<li className='page-item'>
@@ -288,7 +82,7 @@ const MenuPage = () => {
 										</li>
 									</ul>
 								</nav>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</section>
